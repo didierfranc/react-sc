@@ -50,4 +50,4 @@ Actual support is pretty basic. Currently you can use pseudo-class and keyframes
 |Library              |Size (gzipped)    |
 |:-------------------:|:----------------:|
 |styled-component     |20.4 kB           |
-|react-sc + prefixfree|4.4 kB (1.7 + 2.7)|
+|react-sc + prefixfree|3.9 kB (1.2 + 2.7)|

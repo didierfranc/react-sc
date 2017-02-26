@@ -1,15 +1,8 @@
-import React, { DOM } from 'react'
-import { render } from 'react-dom'
-import { hash } from './process'
-import { Style, Styled } from './Components'
+import { DOM } from 'react'
+import Styled from './Styled'
+import process from './process'
 
-const d = document
-
-if (!d.querySelector('sc')) {
-  render(<Style />, d.body.appendChild(d.createElement('sc')))
-}
-
-const styled = t => (...s) => Styled(t, hash(s))
+const styled = t => (...s) => Styled(t, process(s))
 Object.keys(DOM).forEach((e) => { styled[e] = styled(e) })
 
 export default styled

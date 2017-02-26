@@ -6,8 +6,15 @@ import 'prefixfree'
 const blue = (opacity) => `rgba(63, 81, 181, ${opacity})`
 
 const Hello = ({ className }) => (
-  <h1 className={className}>Hello</h1>
+  <div>
+    <h1 className={className}>Hello</h1>
+    <Input innerRef={e => console.log(e)} />
+  </div>
 )
+
+const Input = styled.input`
+  color: blue;
+`
 
 const Test = styled(Hello)`
   cursor: pointer;
@@ -18,8 +25,12 @@ const Test = styled(Hello)`
   animation: appear 2s linear;
 
   @keyframes appear {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   &:hover {
