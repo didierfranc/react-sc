@@ -1,9 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import styled from '../src'
-import 'prefixfree'
 
-const blue = (opacity) => `rgba(63, 81, 181, ${opacity})`
+const blue = 'rgba(63, 81, 181, 1)'
 
 const Hello = ({ className }) => (
   <div>
@@ -17,24 +16,13 @@ const Input = styled.input`
 `
 
 const Test = styled(Hello)`
-  cursor: pointer;
-  user-select: none;
-  color: ${blue(0.6)};
-  padding: 20px;
-  font-family: sans-serif;
-  animation: appear 2s linear;
 
-  @keyframes appear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  @media (max-width: 600px) {
+    & { color: red }
   }
 
   &:hover {
-    color: ${blue(0.8)}
+    color: orange
   }
 `
 

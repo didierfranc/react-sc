@@ -3,8 +3,7 @@ import React from 'react'
 export default (T, h) => {
   const X = <T />
 
-  const C = (props) => {
-
+  const C = props => {
     const newProps = {
       ...props,
       className: props.className ? props.className + ' ' + h : h,
