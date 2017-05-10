@@ -1,5 +1,7 @@
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
 # react-sc 🎨
-A tiny library to create styled components, it's inspired by the great [styled-components](https://github.com/styled-components/styled-components) and [styled-jsx](https://github.com/zeit/styled-jsx). These two libraries use [postcss](https://github.com/postcss/postcss) to generate proper scoped CSS, **react-sc** try to do it itself.
+A tiny library to create styled components, it's inspired by the great [styled-components](https://github.com/styled-components/styled-components) and [styled-jsx](https://github.com/zeit/styled-jsx). These two libraries use [postcss](https://github.com/postcss/postcss) to generate proper scoped CSS, **react-sc** use the new kid in town: [stylis](https://github.com/thysultan/stylis.js).
 
 It's just a POC, it should be used with caution or not ...
 
@@ -39,15 +41,17 @@ const Test = styled.h1`
 
 ## Auto-prefixing
 
-There is no built-in auto-prefixer bundled with **react-sc**, I advise you to use [prefixfree](https://github.com/LeaVerou/prefixfree) (**2.7kB** gzipped) it will add only the needed prefixes for your browser.
+~~There is no built-in auto-prefixer bundled with **react-sc**, I advise you to use [prefixfree](https://github.com/LeaVerou/prefixfree) (**2.7kB** gzipped) it will add only the needed prefixes for your browser.~~
+
+[stylis](https://github.com/thysultan/stylis.js) come with some prefixing but you can also go with the good old prefixfree !
 
 ## Support
 
-Actual support is pretty basic. Currently you can use pseudo-class and keyframes based animations.
+Actual support is pretty basic. Currently you should be able to use every [features of stylis](https://github.com/thysultan/stylis.js/blob/master/README.md#features)
 
 ## Comparison
 
 |Library              |Size (gzipped)    |
 |:-------------------:|:----------------:|
-|styled-component     |20.4 kB           |
-|react-sc + prefixfree|3.9 kB (1.2 + 2.7)|
+|styled-component     |20 993 kB         |
+|react-sc             | 4 707 B          |

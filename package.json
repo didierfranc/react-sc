@@ -1,16 +1,24 @@
 {
   "name": "react-sc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/react-sc.js",
   "author": "Didier Franc",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.config.dev.js",
-    "build": "rm -rf ./dist && webpack && gzip -c ./dist/react-sc.js > ./dist/react-sc.js.gz && gzip -lv ./dist/react-sc.js.gz"
+    "build": "rm -rf ./dist && webpack && gzip -c ./dist/react-sc.js > ./dist/react-sc.js.gz && gzip -lv ./dist/react-sc.js.gz",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/*.js": [
+      "prettier --write --no-semi --single-quote --trailing-comma all",
+      "git add"
+    ]
   },
   "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "stylis": ">= 2.0.8"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -21,8 +29,24 @@
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "html-webpack-plugin": "^2.28.0",
-    "prefixfree": "^1.0.0",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.1",
+    "prettier": "^1.3.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
-  }
+  },
+  "description": "A tiny library to create styled components, it's inspired by the great [styled-components](https://github.com/styled-components/styled-components) and [styled-jsx](https://github.com/zeit/styled-jsx). These two libraries use [postcss](https://github.com/postcss/postcss) to generate proper scoped CSS, **react-sc** use the new kid in town: [stylis](https://github.com/thysultan/stylis.js).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didierfranc/react-sc.git"
+  },
+  "keywords": [
+    "react",
+    "styled",
+    "components"
+  ],
+  "bugs": {
+    "url": "https://github.com/didierfranc/react-sc/issues"
+  },
+  "homepage": "https://github.com/didierfranc/react-sc#readme"
 }
