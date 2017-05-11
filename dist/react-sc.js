@@ -1,12 +1,11 @@
 !(function(e, t) {
-  if ('object' == typeof exports && 'object' == typeof module)
-    module.exports = t(require('react'))
-  else if ('function' == typeof define && define.amd) define(['react'], t)
-  else {
-    var r = t('object' == typeof exports ? require('react') : e.react)
-    for (var n in r)
-      ('object' == typeof exports ? exports : e)[n] = r[n]
-  }
+  'object' == typeof exports && 'object' == typeof module
+    ? (module.exports = t(require('react')))
+    : 'function' == typeof define && define.amd
+        ? define(['react'], t)
+        : 'object' == typeof exports
+            ? (exports.styled = t(require('react')))
+            : (e.styled = t(e.React))
 })(this, function(e) {
   return (function(e) {
     function t(n) {
@@ -136,33 +135,33 @@
           e.exports = r(t)
         })(function(e) {
           'use strict'
-          function t(e, x, A, C, y) {
+          function t(e, v, A, C, y) {
             e += ''
-            var O, j, k, w = y, _ = '', M = '', N = e.charCodeAt(0)
+            var O, k, j, w = y, _ = '', M = '', N = e.charCodeAt(0)
             switch ((N < 33 && (N = (e = e.trim()).charCodeAt(0)), N)) {
               case 35:
               case 46:
                 M = (_ = e).substring(1)
                 break
               case 91:
-                (j = e
+                (k = e
                   .substring(1, e.length - 1)
                   .split(
                     '=',
-                  )), (O = (M = j[1]).charCodeAt(0)), (34 !== O && 39 !== O) || (M = M.substring(1, M.length - 1)), (_ = '[' + j[0] + '="' + M + '"]')
+                  )), (O = (M = k[1]).charCodeAt(0)), (34 !== O && 39 !== O) || (M = M.substring(1, M.length - 1)), (_ = '[' + k[0] + '="' + M + '"]')
                 break
               default:
                 M = _ = e
             }
-            ;(N = 0), !0 === A || void 0 === A || null === A ? ((A = !0), (k = M.replace(p, '-'))) : ((k = ''), (A = !1))
-            var P, E = void 0 !== w && null !== w, $ = l.length
+            ;(N = 0), !0 === A || void 0 === A || null === A ? ((A = !0), (j = M.replace(p, '-'))) : ((j = ''), (A = !1))
+            var P, E = void 0 !== w && null !== w, R = l.length
             !0 === E &&
               ((P = (typeof w).charCodeAt(0)), 111 === P
                 ? r(w)
                 : 102 === P
-                    ? (l[$++] = w)
-                    : (E = !1)), 0 !== $ && ((w = 1 === $ ? l[0] : n), (E = !0))
-            var R,
+                    ? (l[R++] = w)
+                    : (E = !1)), 0 !== R && ((w = 1 === R ? l[0] : n), (E = !0))
+            var $,
               z,
               q,
               F,
@@ -198,24 +197,24 @@
               de = 0,
               he = 0
             !0 === E &&
-              ((T = w(0, x, me, be, _, 0)), null != T && (x = T), (Q = ''))
+              ((T = w(0, v, me, be, _, 0)), null != T && (v = T), (Q = ''))
             for (
-              var ge = 0, pe = 0, be = 0, me = 1, ve = x.length, xe = '';
-              ge < ve;
+              var ge = 0, pe = 0, be = 0, me = 1, xe = v.length, ve = '';
+              ge < xe;
 
             ) {
               if (
-                ((ee = x.charCodeAt(ge)), (1 === te && ge === ve - 1) ||
+                ((ee = v.charCodeAt(ge)), (1 === te && ge === xe - 1) ||
                   (0 === oe &&
                     0 === ae &&
                     0 === fe &&
                     (123 === ee ||
                       125 === ee ||
                       59 === ee ||
-                      (ge === ve - 1 && 0 !== W.length))))
+                      (ge === xe - 1 && 0 !== W.length))))
               ) {
                 if (
-                  ((W += x.charAt(ge)), !0 === E &&
+                  ((W += v.charAt(ge)), !0 === E &&
                     125 !== ee &&
                     null !=
                       (T = 123 === ee
@@ -225,9 +224,9 @@
                             me,
                             be,
                             _,
-                            xe.length,
+                            ve.length,
                           )
-                        : w(2, W, me, be, _, xe.length)) &&
+                        : w(2, W, me, be, _, ve.length)) &&
                     (W = 123 === ee ? T + ' {' : T), (G = W.charCodeAt(
                     0,
                   )), 32 === G &&
@@ -239,12 +238,12 @@
                     (1 === ue &&
                       0 !== Y.length &&
                       ((ue = 0), (Y = _ + ' {' + Y + '}'), !0 === E &&
-                        null != (T = w(4, Y, me, be, _, xe.length)) &&
-                        (Y = T), (xe += Y), (Y = '')), 59 !== ee)
+                        null != (T = w(4, Y, me, be, _, ve.length)) &&
+                        (Y = T), (ve += Y), (Y = '')), 59 !== ee)
                   )
                     if (107 === H)
-                      (K = W.substring(1, 11) + k + W.substring(11)), (W =
-                        '@' + v + K), (N = 1)
+                      (K = W.substring(1, 11) + j + W.substring(11)), (W =
+                        '@' + x + K), (N = 1)
                     else {
                       if (
                         (109 === H && 101 === I) ||
@@ -254,18 +253,18 @@
                         for (
                           ge++, be++, void 0 === U && (U = ''), (q =
                             ''), (le = 1);
-                          ge < ve;
+                          ge < xe;
 
                         ) {
                           if (
-                            ((O = x.charCodeAt(ge)), 123 === O
+                            ((O = v.charCodeAt(ge)), 123 === O
                               ? le++
                               : 125 === O && le--, 0 === le)
                           ) {
                             ge++
                             break
                           }
-                          ;(q += x.charAt(ge++)), (be = 13 === O || 10 === O
+                          ;(q += v.charAt(ge++)), (be = 13 === O || 10 === O
                             ? (me++, 0)
                             : be + 1)
                         }
@@ -276,8 +275,8 @@
                               .trim()), (U +=
                           W + t(e, q.trim(), A, C, null).trim() + '}'), !0 ===
                           E &&
-                          null != (T = w(3, U, me, be, _, xe.length)) &&
-                          (U = T), (W = ''), (te = 1), ge === ve && ve++
+                          null != (T = w(3, U, me, be, _, ve.length)) &&
+                          (U = T), (W = ''), (te = 1), ge === xe && xe++
                         continue
                       }
                       N = 6
@@ -295,27 +294,27 @@
                       (pe++, 1 === ue &&
                         0 !== Y.length &&
                         ((ue = 0), (Y = _ + ' {' + Y + '}'), !0 === E &&
-                          null != (T = w(4, Y, me, be, _, xe.length)) &&
-                          (Y = T), (xe += Y), (Y = '')), 2 === pe)
+                          null != (T = w(4, Y, me, be, _, ve.length)) &&
+                          (Y = T), (ve += Y), (Y = '')), 2 === pe)
                     ) {
                       ge++, be++, (q = '')
                       var Ae = W.substring(0, W.length - 1).split(o),
                         Ce = Z.substring(0, Z.length - 1).split(o)
                       for (
                         le = 1;
-                        ge < ve &&
-                        ((O = x.charCodeAt(ge)), 123 === O
+                        ge < xe &&
+                        ((O = v.charCodeAt(ge)), 123 === O
                           ? le++
                           : 125 === O && le--, 0 !== le);
 
                       )
-                        (q += x.charAt(ge++)), (be = 13 === O || 10 === O
+                        (q += v.charAt(ge++)), (be = 13 === O || 10 === O
                           ? (me++, 0)
                           : be + 1)
-                      $ = Ce.length
-                      for (var ye = 0; ye < $; ye++) {
+                      R = Ce.length
+                      for (var ye = 0; ye < R; ye++) {
                         ;(T = Ce[ye]), (B = T.indexOf(_)), (Ce[ye] = '')
-                        for (var Oe = 0, je = Ae.length; Oe < je; Oe++)
+                        for (var Oe = 0, ke = Ae.length; Oe < ke; Oe++)
                           (e = B > 0
                             ? ':global(%)' + T.trim()
                             : T.replace(_, '&').trim()), (J = Ae[
@@ -324,7 +323,7 @@
                             ? J.replace('&', '').trim() + ' ' + e
                             : null !== c.exec(J) ? J : e + ' ' + J), (Ce[ye] +=
                             e.replace(a, '').trim() +
-                            (Oe === je - 1 ? '' : ','))
+                            (Oe === ke - 1 ? '' : ','))
                       }
                       void 0 === L && (L = ''), (L +=
                         '\n' +
@@ -335,9 +334,9 @@
                     } else if (0 === re || 2 === N) {
                       0 === se &&
                         -1 !== W.indexOf('::place') &&
-                        (se = 1), (F = W.split(o)), (D = ''), (Z = ''), ($ =
+                        (se = 1), (F = W.split(o)), (D = ''), (Z = ''), (R =
                         F.length)
-                      for (var ye = 0; ye < $; ye++)
+                      for (var ye = 0; ye < R; ye++)
                         (O = (e = F[ye]).charCodeAt(0)), 32 === O &&
                           (O = (e = e.trim()).charCodeAt(0)), 38 === O
                           ? (e = _ + e.substring(1).replace(i, _))
@@ -366,15 +365,15 @@
                           null !=
                             (T = w(
                               1.5,
-                              ye === $ - 1
+                              ye === R - 1
                                 ? e.substring(0, e.length - 1).trim()
                                 : e,
                               me,
                               be,
                               _,
-                              xe.length,
+                              ve.length,
                             )) &&
-                          (e = ye === $ - 1 ? T + ' {' : T), (Z +=
+                          (e = ye === R - 1 ? T + ' {' : T), (Z +=
                           (0 !== ye ? ',\n' : '') +
                           (1 !== ce ? e : ':global(%)' + e)), (D += 0 !== ye
                           ? ',' + e
@@ -396,98 +395,98 @@
                           W.indexOf(':') + 1), (D = W.substring(0, z)), !0 ===
                           A && 45 !== W.charCodeAt(9))
                       ) {
-                        var ke = W.substring(z).trim().split(',')
-                        $ = ke.length
-                        for (var ye = 0; ye < $; ye++) {
+                        var je = W.substring(z).trim().split(',')
+                        R = je.length
+                        for (var ye = 0; ye < R; ye++) {
                           for (
-                            var we = ke[ye],
+                            var we = je[ye],
                               _e = we.split(' '),
                               Oe = 0,
-                              je = _e.length;
-                            Oe < je;
+                              ke = _e.length;
+                            Oe < ke;
                             Oe++
                           ) {
                             var Me = _e[Oe].trim(),
                               Ne = Me.charCodeAt(0),
                               Pe = Me.charCodeAt(2),
                               Ee = Me.length,
-                              $e = Me.charCodeAt(Ee - 1)
+                              Re = Me.charCodeAt(Ee - 1)
                             !((Ne > 64 && Ne < 90) ||
                               (Ne > 96 && Ne < 122) ||
                               45 === Ne ||
                               (95 === Ne && 95 !== Me.charCodeAt(1))) ||
-                              41 === $e ||
+                              41 === Re ||
                               0 === Ee ||
                               (105 === Ne &&
-                                ((102 === Pe && 101 === $e && 8 === Ee) ||
-                                  (105 === Pe && 108 === $e && 7 === Ee) ||
-                                  (104 === Pe && 116 === $e && 7 === Ee))) ||
+                                ((102 === Pe && 101 === Re && 8 === Ee) ||
+                                  (105 === Pe && 108 === Re && 7 === Ee) ||
+                                  (104 === Pe && 116 === Re && 7 === Ee))) ||
                               (117 === Ne &&
                                 115 === Pe &&
-                                116 === $e &&
+                                116 === Re &&
                                 5 === Ee) ||
                               (108 === Ne &&
                                 110 === Pe &&
-                                114 === $e &&
+                                114 === Re &&
                                 6 === Ee) ||
                               (97 === Ne &&
                                 116 === Pe &&
-                                101 === $e &&
+                                101 === Re &&
                                 (9 === Ee || 17 === Ee)) ||
                               (110 === Ne &&
                                 114 === Pe &&
-                                108 === $e &&
+                                108 === Re &&
                                 6 === Ee) ||
                               (98 === Ne &&
                                 99 === Pe &&
-                                115 === $e &&
+                                115 === Re &&
                                 9 === Ee) ||
                               (102 === Ne &&
                                 114 === Pe &&
-                                115 === $e &&
+                                115 === Re &&
                                 8 === Ee) ||
                               (98 === Ne &&
                                 116 === Pe &&
-                                104 === $e &&
+                                104 === Re &&
                                 4 === Ee) ||
                               (110 === Ne &&
                                 110 === Pe &&
-                                101 === $e &&
+                                101 === Re &&
                                 4 === Ee) ||
                               (114 === Ne &&
                                 110 === Pe &&
-                                103 === $e &&
+                                103 === Re &&
                                 7 === Ee) ||
                               (112 === Ne &&
                                 117 === Pe &&
-                                100 === $e &&
+                                100 === Re &&
                                 6 === Ee) ||
                               (114 === Ne &&
                                 118 === Pe &&
-                                100 === $e &&
+                                100 === Re &&
                                 8 === Ee) ||
                               (115 === Ne &&
                                 101 === Pe &&
-                                ((116 === $e && 10 === Ee) ||
-                                  (100 === $e && 8 === Ee))) ||
+                                ((116 === Re && 10 === Ee) ||
+                                  (100 === Re && 8 === Ee))) ||
                               (101 === Ne &&
                                 115 === Pe &&
-                                ((101 === $e && 4 === Ee) ||
+                                ((101 === Re && 4 === Ee) ||
                                   ((11 === Ee || 7 === Ee || 8 === Ee) &&
                                     45 === Me.charCodeAt(4)))) ||
                               !isNaN(parseFloat(Me)) ||
                               -1 !== Me.indexOf('(') ||
-                              (_e[Oe] = k + Me)
+                              (_e[Oe] = j + Me)
                           }
                           D += (0 === ye ? '' : ',') + _e.join(' ').trim()
                         }
                       } else
                         D +=
-                          (110 !== W.charCodeAt(10) ? '' : k) +
+                          (110 !== W.charCodeAt(10) ? '' : j) +
                           W.substring(z).trim().trim()
-                      W = v + D + ';' + D + (125 === ee ? ';}' : ';')
+                      W = x + D + ';' + D + (125 === ee ? ';}' : ';')
                     } else if (97 === G && 112 === H && 112 === I)
-                      W = v + W + b + W + W
+                      W = x + W + b + W + W
                     else if (100 === G && 105 === H && 115 === I)
                       -1 !== (B = W.indexOf('flex')) &&
                         ((T = 101 === W.charCodeAt(B - 2)
@@ -496,12 +495,12 @@
                           ? ' !important'
                           : ''), (W =
                           'display: ' +
-                          v +
+                          x +
                           T +
                           'box' +
                           W +
                           ';display: ' +
-                          v +
+                          x +
                           T +
                           'flex' +
                           W +
@@ -518,16 +517,16 @@
                       116 === G &&
                       ((114 === H && 97 === I) || (101 === H && 120 === I))
                     )
-                      W = v + W + (102 === W.charCodeAt(5) ? m + W : '') + W
+                      W = x + W + (102 === W.charCodeAt(5) ? m + W : '') + W
                     else if (
                       (104 === G && 121 === H && 112 === I) ||
                       (117 === G && 115 === H && 101 === I)
                     )
-                      W = v + W + b + W + m + W + W
+                      W = x + W + b + W + m + W + W
                     else if (102 === G && 108 === H && 101 === I)
-                      W = v + W + m + W + W
+                      W = x + W + m + W + W
                     else if (111 === G && 114 === H && 100 === I)
-                      W = v + W + m + 'flex-' + W + W
+                      W = x + W + m + 'flex-' + W + W
                     else if (
                       97 === G &&
                       108 === H &&
@@ -537,7 +536,7 @@
                       switch (W.charCodeAt(6)) {
                         case 105:
                           (T = W.replace('-items', '')), (W =
-                            v + W + v + 'box-' + T + m + 'flex-' + T + W)
+                            x + W + x + 'box-' + T + m + 'flex-' + T + W)
                           break
                         case 115:
                           W = m + 'flex-item-' + W.replace('-self', '') + W
@@ -555,10 +554,10 @@
                             'flex-',
                             '',
                           )), (W =
-                            v +
+                            x +
                             'box-pack' +
                             T +
-                            v +
+                            x +
                             W +
                             m +
                             'flex-pack' +
@@ -569,7 +568,7 @@
                             114 === I &&
                             null !== /zoo|gra/.exec(W)
                             ? (W =
-                                W.replace(g, ': ' + v) +
+                                W.replace(g, ': ' + x) +
                                 W.replace(g, ': ' + b) +
                                 W)
                             : 119 === G &&
@@ -578,7 +577,7 @@
                                 -1 !== (B = W.indexOf('-content')) &&
                                 ((T = W.substring(B - 3)), (W =
                                   'width: ' +
-                                  v +
+                                  x +
                                   T +
                                   'width: ' +
                                   b +
@@ -592,10 +591,10 @@
                   125 === ee &&
                     (0 !== pe && pe--, 0 === pe &&
                       1 === ie &&
-                      ((x =
-                        x.substring(0, ge + 1) +
+                      ((v =
+                        v.substring(0, ge + 1) +
                         L +
-                        x.substring(ge + 1)), (ve += L.length), (L =
+                        v.substring(ge + 1)), (xe += L.length), (L =
                         ''), (ie = 0), ne++), 125 !== G &&
                       32 === W.charCodeAt(W.length - 2) &&
                       (W = W.substring(0, W.length - 1).trim() + '}')), 0 !== re
@@ -616,14 +615,14 @@
                       : 123 === ee ? (X = U + X) : (X += U), (te = 0), (U =
                       '')), 123 !== O &&
                     (!0 === E &&
-                      null != (T = w(3, X, me, be, _, xe.length)) &&
+                      null != (T = w(3, X, me, be, _, ve.length)) &&
                       (X = T), 1 === se &&
                       (void 0 === S && (S = h), (se = 0), (T =
                         'input-place'), (X =
-                        X.replace(S, '::' + v + T) +
+                        X.replace(S, '::' + x + T) +
                         X.replace(S, '::' + b + 'place') +
                         X.replace(S, ':' + m + T) +
-                        X)), (xe += X)), (X = '')), (W = '')
+                        X)), (ve += X)), (X = '')), (W = '')
               } else if (13 === ee || 10 === ee)
                 1 === he
                   ? ((fe = he = 0), (W = W.substring(
@@ -632,17 +631,17 @@
                     ).trim()))
                   : !0 === E &&
                       0 === fe &&
-                      0 !== ($ = (Q = Q.trim()).length) &&
+                      0 !== (R = (Q = Q.trim()).length) &&
                       47 !== Q.charCodeAt(0) &&
                       (0 !== W.length &&
-                        null != (T = w(7, Q, me, be, _, xe.length)) &&
+                        null != (T = w(7, Q, me, be, _, ve.length)) &&
                         (W = W.replace(new RegExp(Q + '$'), T).trim()), (Q =
                         '')), (be = 0), me++
               else {
                 if (9 !== ee)
-                  switch (((R = x.charAt(ge)), !0 === E &&
+                  switch ((($ = v.charAt(ge)), !0 === E &&
                     0 === fe &&
-                    (Q += R), (W += R), ee)) {
+                    (Q += $), (W += $), ee)) {
                     case 44:
                       0 === oe && 0 === fe && 0 === ae && (W += '\n')
                       break
@@ -661,7 +660,7 @@
                     case 47:
                       0 === oe &&
                         0 === ae &&
-                        ((O = x.charCodeAt(ge - 1)), 0 === de && 47 === O
+                        ((O = v.charCodeAt(ge - 1)), 0 === de && 47 === O
                           ? (fe = he = 1)
                           : 42 === O &&
                               ((fe = de = 0), (W = W.substring(
@@ -674,7 +673,7 @@
                         0 === ae &&
                         0 === he &&
                         0 === de &&
-                        47 === x.charCodeAt(ge - 1) &&
+                        47 === v.charCodeAt(ge - 1) &&
                         (fe = de = 1)
                   }
                 be++
@@ -684,8 +683,8 @@
             return void 0 !== Y &&
               0 !== Y.length &&
               ((Y = _ + ' {' + Y + '}'), !0 === E &&
-                null != (T = w(4, Y, me, be, _, xe.length)) &&
-                (Y = T), (xe += Y)), !0 === E && null != (T = w(6, xe, me, be, _, xe.length)) && (xe = T), xe
+                null != (T = w(4, Y, me, be, _, ve.length)) &&
+                (Y = T), (ve += Y)), !0 === E && null != (T = w(6, ve, me, be, _, ve.length)) && (ve = T), ve
           }
           function r(e) {
             var r = l.length
@@ -718,7 +717,7 @@
             p = /[ .#~+><\d]+/g,
             b = '-moz-',
             m = '-ms-',
-            v = '-webkit-'
+            x = '-webkit-'
           return (t.use = r), (t.p = l), (t.r = { a: i, s: o, g: c, n: s }), t
         })
       }.call(t, r(5)))
