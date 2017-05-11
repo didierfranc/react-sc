@@ -1,6 +1,13 @@
 import stylis from 'stylis'
 
-const join = s => s[0].reduce((r, v, i) => r + v + (s[i + 1] || ''), '')
+const join = (s, props) =>
+  s[0].reduce(
+    (r, v, i) =>
+      typeof s[i + 1] === 'function'
+        ? r + v + (s[i + 1](props) || '')
+        : r + v + (s[i + 1] || ''),
+    '',
+  )
 
 const m = v => v.match(/[a-zA-Z0-9]/g).join('').slice(-3)
 const hash = s => m(btoa(s.length)) + m(btoa(s))
@@ -18,8 +25,8 @@ const append = (p, h) => {
 
 const beautify = s => toReplace.reduce((r, v) => r.replace(v[0], v[1]), s)
 
-export default s => {
-  const j = join(s), h = hash(j), p = stylis(`.${h}`, j)
+export default (s, props) => {
+  const j = join(s, props), h = hash(j), p = stylis(`.${h}`, j)
   append(p, h)
   return h
 }
