@@ -16,14 +16,7 @@ const Input = styled.input`
 `
 
 const Test = styled(Hello)`
-
-  @media (max-width: 600px) {
-    & { color: red }
-  }
-
-  &:hover {
-    color: orange
-  }
+  color: ${props => props.color || 'green'};
 `
 
-render(<Test />, document.getElementById('root'))
+render(<Test color={'blue'} />, document.getElementById('root'))

@@ -1,9 +1,13 @@
 import React from 'react'
+import process from './process'
 
-export default (T, h) => {
+export default (T, s) => {
   const X = <T />
+  let h
 
   const C = props => {
+    h = process(s, props)
+
     const newProps = {
       ...props,
       className: props.className ? props.className + ' ' + h : h,
