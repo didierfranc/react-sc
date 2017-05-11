@@ -1,6 +1,6 @@
 {
   "name": "react-sc",
-  "version": "0.0.2",
+  "version": "0.1.1",
   "main": "./dist/react-sc.js",
   "author": "Didier Franc",
   "license": "MIT",

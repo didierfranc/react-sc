@@ -1,4 +1,4 @@
-import styled from 'react-sc'
+import styled from '../../../dist/react-sc'
 
 export const Main = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ export const Link = styled.a`
   cursor: pointer;
   transition: all .2s ease-in-out;
   text-decoration: none;
-  animation: blink 2s infinite;
+  ${({ href }) => href && 'animation:  blink 2s infinite'};
 
   &:hover {
     color: white;

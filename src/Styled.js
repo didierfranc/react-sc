@@ -2,11 +2,11 @@ import React from 'react'
 import process from './process'
 
 export default (T, s) => {
-  const X = <T />
-  let h
+  const Tag = typeof T === 'function' ? eval(T) : T
+  const setDisplayName = h => (Styled.displayName = `${T.name || T}-${h}`)
 
-  const C = props => {
-    h = process(s, props)
+  const Styled = props => {
+    const h = process(s, props)
 
     const newProps = {
       ...props,
@@ -14,12 +14,10 @@ export default (T, s) => {
     }
 
     if (newProps.innerRef) newProps.ref = props.innerRef
-    if (typeof X.type === 'string') delete newProps.innerRef
-
-    return <X.type {...newProps} />
+    if (typeof T === 'string') delete newProps.innerRef
+    setDisplayName(h)
+    return <Tag {...newProps} />
   }
 
-  C.displayName = `${T.name || T}-${h}`
-
-  return C
+  return Styled
 }
