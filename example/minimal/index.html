@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>react-sc</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/react@15.5.4/dist/react.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root" />
+    <script src="../../dist/react-sc.js" charset="utf-8"></script>
+    <script type="text/babel">
+      const HelloWorld = styled.default.div`
+        color: blue;
+      `
+      ReactDOM.render(
+        <HelloWorld>Hello World !</HelloWorld>,
+        document.getElementById('root'),
+      )
+    </script>
+  </body>
+</html>

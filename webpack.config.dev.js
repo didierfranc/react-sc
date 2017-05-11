@@ -6,14 +6,14 @@ module.exports = {
   entry: [
     'webpack-dev-server/client',
     'webpack/hot/only-dev-server',
-    resolve(__dirname, './example'),
+    resolve(__dirname, './example/basic/hot'),
   ],
   output: {
     filename: 'bundle.js',
     path: resolve(__dirname),
     publicPath: '/',
   },
-  context: resolve(__dirname, './example'),
+  context: resolve(__dirname, './example/basic'),
   devtool: 'inline-source-map',
   devServer: {
     hot: true,
@@ -25,7 +25,10 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: [resolve(__dirname, './example'), resolve(__dirname, './src')],
+        include: [
+          resolve(__dirname, './example/basic'),
+          resolve(__dirname, './src'),
+        ],
         use: 'babel-loader',
       },
     ],
@@ -34,11 +37,11 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      template: 'template.html'
+      template: 'template.html',
     }),
   ],
   performance: { hints: false },
   node: {
-    fs: "empty"
-  }
+    fs: 'empty',
+  },
 }

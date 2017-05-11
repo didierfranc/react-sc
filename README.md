@@ -43,7 +43,7 @@ const Test = styled.h1`
 
 ~~There is no built-in auto-prefixer bundled with **react-sc**, I advise you to use [prefixfree](https://github.com/LeaVerou/prefixfree) (**2.7kB** gzipped) it will add only the needed prefixes for your browser.~~
 
-[stylis](https://github.com/thysultan/stylis.js) come with some prefixing but you can also go with the good old prefixfree !
+[stylis](https://github.com/thysultan/stylis.js) come with some prefixing but you can always use the good old prefixfree !
 
 ## Support
 
@@ -53,5 +53,5 @@ Actual support is pretty basic. Currently you should be able to use every [featu
 
 |Library              |Size (gzipped)    |
 |:-------------------:|:----------------:|
-|styled-component     |20 993 kB         |
-|react-sc             | 4 707 B          |
+|styled-component     |20 993 B         |
+|react-sc             | 4 178 B          |
