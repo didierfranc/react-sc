@@ -12,7 +12,6 @@ If you're using basic css you can replace `styled-components` import with `react
 ```js
 import React from 'react'
 import styled from 'react-sc'
-import 'prefixfree'
 
 const blue = (opacity) => `rgba(63, 81, 181, ${opacity})`
 
@@ -54,4 +53,4 @@ Actual support is pretty basic. Currently you should be able to use every [featu
 |Library              |Size (gzipped)    |
 |:-------------------:|:----------------:|
 |styled-component     |20 993 B         |
-|react-sc             | 4 311 B          |
+|react-sc             | 4 348 B          |

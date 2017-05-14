@@ -1,9 +1,9 @@
-import { DOM } from 'react'
+import elements from './elements'
 import Styled from './Styled'
 import process from './process'
 
 const styled = t => (...s) => Styled(t, s)
-Object.keys(DOM).forEach(e => {
+elements.forEach(e => {
   styled[e] = styled(e)
 })
 
