@@ -1,12 +1,16 @@
 {
   "name": "react-sc",
-  "version": "0.1.1",
-  "main": "./dist/react-sc.js",
+  "version": "0.2.0",
+  "main": "./dist/react-sc.min.js",
+  "jsnext:main": "./dist/react-sc.es.min.js",
   "author": "Didier Franc",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.config.dev.js",
-    "build": "rm -rf ./dist && webpack && gzip -c ./dist/react-sc.js > ./dist/react-sc.js.gz && gzip -lv ./dist/react-sc.js.gz",
+    "build": "rm -rf ./dist && yarn build:es && yarn build:umd && yarn gzip",
+    "build:es": "rollup -c rollup.config.es.js",
+    "build:umd": "rollup -c rollup.config.umd.js",
+    "gzip": "gzip -c ./dist/react-sc.es.min.js > ./dist/react-sc.es.min.js.gz && gzip -lv ./dist/react-sc.es.min.js.gz",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -16,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "stylis": ">= 2.0.8"
@@ -24,14 +29,22 @@
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.22.0",
     "html-webpack-plugin": "^2.28.0",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.1",
     "prettier": "^1.3.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^1.0.2",
+    "uglify-js-harmony": "^2.7.7",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
   },

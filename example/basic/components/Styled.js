@@ -1,4 +1,4 @@
-import styled from '../../../dist/react-sc'
+import styled from '../../../dist/react-sc.es.min'
 
 export const Main = styled.div`
   display: flex;
