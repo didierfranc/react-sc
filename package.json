@@ -1,6 +1,6 @@
 {
   "name": "react-sc",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./dist/react-sc.min.js",
   "jsnext:main": "./dist/react-sc.es.min.js",
   "author": "Didier Franc",
@@ -47,6 +47,10 @@
     "uglify-js-harmony": "^2.7.7",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "description": "A tiny library to create styled components, it's inspired by the great [styled-components](https://github.com/styled-components/styled-components) and [styled-jsx](https://github.com/zeit/styled-jsx). These two libraries use [postcss](https://github.com/postcss/postcss) to generate proper scoped CSS, **react-sc** use the new kid in town: [stylis](https://github.com/thysultan/stylis.js).",
   "repository": {
