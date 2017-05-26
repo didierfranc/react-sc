@@ -3,6 +3,12 @@ import { Main, Link } from './Styled'
 
 export default () => (
   <Main>
-    <Link href="https://github.com/didierfranc/react-sc">react-sc</Link>
+    <Link
+      weird={true}
+      href="https://github.com/didierfranc/react-sc"
+      htmlFor="box"
+    >
+      react-sc
+    </Link>
   </Main>
 )

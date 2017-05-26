@@ -53,4 +53,4 @@ Actual support is pretty basic. Currently you should be able to use every [featu
 |Library              |Size (gzipped)    |
 |:-------------------:|:----------------:|
 |styled-component     |20 993 B         |
-|react-sc             | 4 362 B          |
+|react-sc             | 4 468 B          |
