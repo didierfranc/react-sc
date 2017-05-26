@@ -1,4 +1,5 @@
 import stylis from 'stylis'
+import hash from './hash'
 
 const join = (s, props) =>
   s[0].reduce(
@@ -8,9 +9,6 @@ const join = (s, props) =>
         : r + v + (s[i + 1] || ''),
     '',
   )
-
-const m = v => v.match(/[a-zA-Z0-9]/g).join('').slice(-3)
-const hash = s => m(btoa(s.length)) + m(btoa(s))
 
 const c = [], d = document, style = d.createElement('style')
 
