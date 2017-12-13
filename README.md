@@ -54,3 +54,6 @@ Actual support is pretty basic. Currently you should be able to use every [featu
 |:-------------------:|:----------------:|
 |styled-component     |20 993 B         |
 |react-sc             | 4 468 B          |
+
+<img src="https://raw.githubusercontent.com/didierfranc/donate/master/qr.png" width="100" height="100">
+
